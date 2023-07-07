@@ -1,0 +1,57 @@
+@import url(./css/reset.css);
+@import url(./css/clock.css);
+@import url(./css/searchInput.css);
+@import url(./css/keywordHistory.css);
+
+*,
+body {
+  font-family: sans-serif;
+}
+
+#App {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.Stage-lighting-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: inherit;
+}
+
+.Background-Image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  contain: layout paint style;
+  pointer-events: none;
+}
+
+.Background-Image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  transition: opacity 0.35s;
+}
