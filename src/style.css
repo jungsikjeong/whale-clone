@@ -18,7 +18,6 @@ body {
   height: 100%;
   z-index: 2;
   color: #ffffff;
-  background-color: rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,6 +34,18 @@ body {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   z-index: inherit;
+}
+
+.Stage-lighting-dark::after {
+  content: '';
+  width: 100%;
+  height: 197px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.6));
+  pointer-events: none;
 }
 
 .Background-Image {
