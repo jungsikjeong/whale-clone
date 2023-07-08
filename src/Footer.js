@@ -7,7 +7,6 @@ class Footer {
     this.$wrapper = $wrapper;
     $target.appendChild($wrapper);
 
-    console.log('ㅇㅇ');
     this.render();
   }
 

@@ -60,6 +60,11 @@ class KeywordHistory {
         `
       )
       .join('');
+
+    const $items = document.querySelectorAll('.KeywordHistory-item');
+    $items.forEach((item) => {
+      console.log(item);
+    });
   }
 }
 
