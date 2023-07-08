@@ -57,7 +57,7 @@
 }
 
 @media screen and (max-width: 576px) {
-  .SearchInputSection {
-    padding: 0 1rem;
+  .SearchInput-wrapper {
+    width: 90%;
   }
 }

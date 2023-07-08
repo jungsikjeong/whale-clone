@@ -25,3 +25,9 @@
   font-size: 0.9374rem;
   cursor: pointer;
 }
+
+@media screen and (max-width: 576px) {
+  .KeywordHistory {
+    width: 90%;
+  }
+}

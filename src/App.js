@@ -1,5 +1,6 @@
 import BackgroundImage from './BackgroundImage.js';
 import Clock from './Clock.js';
+import Footer from './Footer.js';
 import SearchInput from './SearchInput.js';
 import randomBgImage from './utils/randomBgImage.js';
 
@@ -20,6 +21,8 @@ class App {
     this.clock = new Clock({
       $target,
     });
+
+    this.footer = new Footer({ $target });
 
     this.backgroundImage = new BackgroundImage({
       $target,
