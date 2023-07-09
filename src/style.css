@@ -25,6 +25,14 @@ body {
   justify-content: center;
 }
 
+.close-btn {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+}
+
 .Stage-lighting-dark {
   position: absolute;
   top: 0;

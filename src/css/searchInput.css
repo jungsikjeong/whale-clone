@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  z-index: inherit;
+  z-index: 20;
 }
 
 .SearchInput-wrapper {

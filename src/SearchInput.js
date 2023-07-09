@@ -14,7 +14,20 @@ class SearchInput {
 
     this.KeywordHistory = new KeywordHistory({
       $target: $wrapper,
+      searchResult: this.searchResult,
     });
+  }
+
+  searchResult(keyword) {
+    const query = keyword;
+    if (query) {
+      const encodedQuery = encodeURIComponent(query);
+
+      const searchUrl = `https://search.naver.com/search.naver?query=${encodedQuery}`;
+      window.location.href = searchUrl;
+
+      this.KeywordHistory.addKeyword(query);
+    }
   }
 
   render() {
@@ -27,39 +40,42 @@ class SearchInput {
         </div>
 `;
 
-    const wrapper = document.querySelector('.SearchInput-wrapper');
-    const searchInput = document.querySelector('.SearchInput');
-    const svg = document.querySelector('#searchIcon');
+    const $wrapper = document.querySelector('.SearchInput-wrapper');
+    const $searchInput = document.querySelector('.SearchInput');
+    const $svg = document.querySelector('#searchIcon');
 
-    searchInput.addEventListener('click', () => {
-      svg.style.fill = '#34f830';
-      wrapper.style.backgroundColor = 'hsla(0, 0%, 100%, 0.9)';
+    $searchInput.addEventListener('click', () => {
+      $svg.style.fill = '#34f830';
+      $wrapper.style.backgroundColor = 'hsla(0, 0%, 100%, 0.9)';
 
       const history = this.KeywordHistory.getHistory();
 
       if (history.length !== 0 && history !== null) {
-        wrapper.style.backgroundColor = 'hsla(0, 0%, 100%, 0.9)';
-        wrapper.style.borderRadius = ' 8px 8px 0px 0px';
+        $wrapper.style.backgroundColor = 'hsla(0, 0%, 100%, 0.9)';
+        $wrapper.style.borderRadius = ' 8px 8px 0px 0px';
         this.KeywordHistory.changeStyle(true);
       }
     });
 
-    searchInput.addEventListener('blur', () => {
-      svg.style.fill = 'white';
-      wrapper.style.backgroundColor = 'hsla(0, 0%, 100%, 0.5)';
-      wrapper.style.borderRadius = '8px';
-      this.KeywordHistory.changeStyle(false);
+    // 검색창 및 키워드박스 외에 클릭시
+    document.addEventListener('click', (e) => {
+      const isOutsideClick =
+        e.target.className === 'KeywordHistory-item' ||
+        e.target.className === 'SearchInput';
+
+      if (!isOutsideClick) {
+        $svg.style.fill = 'white';
+        $wrapper.style.backgroundColor = 'hsla(0, 0%, 100%, 0.5)';
+        $wrapper.style.borderRadius = '8px';
+        this.KeywordHistory.changeStyle(false);
+      }
     });
 
-    searchInput.addEventListener('keydown', (e) => {
+    $searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
-        const query = searchInput.value;
-        const encodedQuery = encodeURIComponent(query);
+        this.searchResult($searchInput.value);
 
-        const searchUrl = `https://search.naver.com/search.naver?query=${encodedQuery}`;
-        window.location.href = searchUrl;
-
-        this.KeywordHistory.addKeyword(query);
+        this.KeywordHistory.addKeyword($searchInput.value);
       }
     });
   }

@@ -8,7 +8,7 @@
   color: #000;
   background: hsla(0, 0%, 100%, 0.9);
   text-align: left;
-  z-index: 9999;
+  z-index: 20;
   border-radius: 0 0 6px 6px;
   border-top: 1px solid rgba(0, 0, 0, 0.0784313725490196);
   padding: 10px;
@@ -16,6 +16,8 @@
 }
 
 .KeywordHistory .KeywordHistory-item {
+  display: flex;
+  align-items: center;
   padding: 4px 16px;
   line-height: 1.75;
   white-space: nowrap;
