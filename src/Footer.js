@@ -21,6 +21,9 @@ class Footer {
           <span class='ImageInfo-text-author'>Illustration by Coniglio</span>
         </div>
       </div>
+      <div>
+        
+      </div>
       <div class='footer-bg-dark' />
     `;
   }

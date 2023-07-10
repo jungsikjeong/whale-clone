@@ -35,7 +35,6 @@ class KeywordHistory {
     keywordHistory.unshift(newKeyword);
     keywordHistory = keywordHistory.slice(0, 5);
     keywordHistory = uniqueArray(keywordHistory);
-    console.log(keywordHistory);
 
     localStorage.setItem('keywordHistory', JSON.stringify(keywordHistory));
     this.init();
