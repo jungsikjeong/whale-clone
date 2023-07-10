@@ -45,18 +45,6 @@ body {
   z-index: inherit;
 }
 
-.Stage-lighting-dark::after {
-  content: '';
-  width: 100%;
-  height: 197px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.6));
-  pointer-events: none;
-}
-
 .Background-Image {
   position: absolute;
   top: 0;
