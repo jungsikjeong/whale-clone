@@ -73,7 +73,7 @@ class SearchInput {
 
     $searchInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
-        this.searchResult($searchInput.value);
+        // this.searchResult($searchInput.value);
 
         this.KeywordHistory.addKeyword($searchInput.value);
       }
